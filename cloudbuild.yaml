@@ -22,7 +22,7 @@ steps:
   - run
   - --filename=deployment.yaml
   - --cluster=web-go-cluster 
-  - --location= us-central1-c 	
+  - --location=us-central1-c 	
   timeout: 900s
 
 # Global Timeout
