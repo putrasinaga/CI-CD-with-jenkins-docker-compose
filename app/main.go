@@ -18,7 +18,7 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, World putra!")
+	fmt.Fprintf(w, "Hello, World putra!!")
 }
 
 func endointsaya(w http.ResponseWriter, r *http.Request) {
