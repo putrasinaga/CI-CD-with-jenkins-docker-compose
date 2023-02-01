@@ -29,11 +29,11 @@ spec:
     spec:
       containers:
       - name: deployment-web-go
-        image:  us.gcr.io/$PROJECT_ID/production/wooless:$SHORT_SHA
+        image:  us.gcr.io/$PROJECT_ID/web-go:$SHORT_SHA
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-          name: wooless
+          name: web-go-container
         resources:
           requests:
             cpu: 50m
