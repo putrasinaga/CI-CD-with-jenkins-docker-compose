@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: container-web-go
-        image: us.gcr.io/$PROJECT_ID/production/web-go:$SHORT_SHA
+        image: us.gcr.io/$PROJECT_ID/web-go:$SHORT_SHA
         resources:
           limits:
             memory: "128Mi"
