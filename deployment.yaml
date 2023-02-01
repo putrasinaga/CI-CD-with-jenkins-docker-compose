@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-web-go
+spec:
+  selector:
+    app: deployment-web-go
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-web-go
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: deployment-web-go
+  template:
+    metadata:
+      labels:
+        app: deployment-web-go
+    spec:
+      containers:
+      - name: container-web-go
+        image: us.gcr.io/$PROJECT_ID/production/web-go:$SHORT_SHA
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
