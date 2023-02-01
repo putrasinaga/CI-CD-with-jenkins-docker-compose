@@ -22,7 +22,7 @@ spec:
       app: deployment-web-go
   strategy:
     type: RollingUpdate
-  template: #Template for container
+  template: 
     metadata:
       labels:
         app: deployment-web-go
