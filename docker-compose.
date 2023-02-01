@@ -4,8 +4,8 @@ services:
   golang:
     container_name: golang
     build: 
-      context: "app/"
+      context: "./"
       dockerfile: dockerfile 
-    image: "putrasaut/golang-hello-world-with-docker-compose:1.0.0"
+    image: "putrasaut/golang-hello-world-with-docker-compose:2.0.0"
     ports:
       - 3000:3000

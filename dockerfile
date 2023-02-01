@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN go build -o hello-go /app/main.go 
+RUN go build -o hello-go . 
 
 FROM alpine:3
 
