@@ -17,21 +17,23 @@ kind: Deployment
 metadata:
   name: deployment-web-go
 spec:
-  replicas: 3 
   selector:
     matchLabels:
       app: deployment-web-go
-  template:
+  strategy:
+    type: RollingUpdate
+  template: #Template for container
     metadata:
       labels:
         app: deployment-web-go
     spec:
       containers:
-      - name: container-web-go
-        image: us.gcr.io/$PROJECT_ID/web-go:$SHORT_SHA
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "50m"
+      - name: deployment-web-go
+        image:  us.gcr.io/$PROJECT_ID/production/wooless:$SHORT_SHA
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
+          name: wooless
+        resources:
+          requests:
+            cpu: 50m
