@@ -11,7 +11,6 @@ pipeline{
         }
     }
 
-
     post{
         always{
             echo("proses sedang berjalan")
@@ -22,7 +21,8 @@ pipeline{
         failure{
             echo("proses gagal")
         }
-    }   cleanup{
+       cleanup{
             echo("proses selesai")
+        }
     }
 }
