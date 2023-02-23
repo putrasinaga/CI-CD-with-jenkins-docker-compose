@@ -1,9 +1,9 @@
 pipeline{
     agent any
 
-parameters{
-    string(name:NAME, description:"silahkan masukan nama project")
-}
+// parameters{
+//     string(name:NAME, description:"silahkan masukan nama project")
+// }
     stages{
         stage ("test"){
             steps{
