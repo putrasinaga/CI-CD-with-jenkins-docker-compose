@@ -7,9 +7,8 @@ pipeline{
     stages{
         stage ("test"){
             steps{
-                echo(
-                    "testing"
-                )
+                echo("testing")
+                sh("pwd")
             }
         }
         stage("build project"){
