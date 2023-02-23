@@ -1,6 +1,10 @@
 pipeline{
     agent any
 
+    tools{
+        go '1.19'
+    }
+
 // parameters{
 //     string(name:NAME, description:"silahkan masukan nama project")
 // }
@@ -8,7 +12,8 @@ pipeline{
         stage ("test"){
             steps{
                 echo("testing")
-                sh("pwd")
+                sh("go test -v")
+                //sh("pwd")
             }
         }
         stage("build project"){
