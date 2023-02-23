@@ -21,7 +21,7 @@ pipeline{
         stage("start container"){
             steps{
                 echo("run container")
-                sh("docker compose start")
+                sh("docker compose up")
             }
         }
     }
