@@ -13,8 +13,15 @@ pipeline{
         }
         stage("build project"){
             steps{
-                echo("build image & run project")
+                echo("build image")
                 sh("docker compose build")
+            }
+        }
+
+        stage("start container"){
+            steps{
+                echo("run container")
+                sh("docker compose start")
             }
         }
     }
