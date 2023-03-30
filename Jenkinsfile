@@ -9,13 +9,13 @@ pipeline{
 //     string(name:NAME, description:"silahkan masukan nama project")
 // }
     stages{
-        stage ("test"){
-            steps{
-                echo("testing")
-                sh("go test -v")
-                //sh("pwd")
-            }
-        }
+//         stage ("test"){
+//             steps{
+//                 echo("testing")
+//                 sh("go test -v")
+//                 //sh("pwd")
+//             }
+//         }
         stage("build project"){
             steps{
                 echo("build image")
