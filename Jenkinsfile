@@ -29,6 +29,17 @@ pipeline{
                 sh("docker compose create && docker compose start")
             }
         }
+        
+         stage("push to dockerhub"){
+            steps{
+            script{
+                withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubprd')]) {
+                    sh 'docker login -u putrasaut -p ${dockerhubprd}'
+                }
+                    sh "docker push putrasaut/testing"   
+            }
+        }   
+ }
     }
 
     post{
