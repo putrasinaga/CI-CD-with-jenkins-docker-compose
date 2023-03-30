@@ -12,7 +12,11 @@ WORKDIR /app
 
 COPY --from=builder /app/hello-go .
 
-EXPOSE 3000
-
 CMD  ./hello-go
+
+
+nama 
+nickname 
+perusahaan 
+latar belakang 
 

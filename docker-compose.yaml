@@ -9,3 +9,25 @@ services:
     image: "putrasaut/golang-hello-world-with-docker-compose:2.0.0"
     ports:
       - 3000:3000
+
+  postgre:
+    container_name: postgre
+    restart: always
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: rahasia
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  
+  adminer:
+    container_name: adminer
+    restart: always 
+    image: adminer
+    ports:
+      - 8088:8080
+  
+volumes:
+  db-data:
